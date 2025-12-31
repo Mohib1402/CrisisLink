@@ -47,6 +47,7 @@ export default function Home() {
       await navigator.mediaDevices.getUserMedia({ audio: true });
       await conversation.startSession({
         agentId: process.env.NEXT_PUBLIC_AGENT_ID || "placeholder",
+        connectionType: "webrtc",
       });
     } catch (err) {
       console.error("Failed to start:", err);
