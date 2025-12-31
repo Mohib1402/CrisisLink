@@ -46,7 +46,7 @@ export default function Home() {
     try {
       await navigator.mediaDevices.getUserMedia({ audio: true });
       await conversation.startSession({
-        agentId: process.env.NEXT_PUBLIC_AGENT_ID,
+        agentId: process.env.NEXT_PUBLIC_AGENT_ID || "placeholder",
       });
     } catch (err) {
       console.error("Failed to start:", err);
